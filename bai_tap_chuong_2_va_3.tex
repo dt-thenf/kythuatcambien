@@ -1,8 +1,318 @@
-\documentclass{article}
-\usepackage{pdfpages}
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T5]{fontenc}
+\usepackage[vietnamese]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,array}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\usepackage[letterpaper,margin=1in]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
 \pagestyle{empty}
+\newcommand{\bt}[1]{\textbf{#1}}
 
 \begin{document}
-\includepdf[pages=-,fitpaper=true,pagecommand={}]{Bai_tap_chuong_2.pdf}
-\includepdf[pages=-,fitpaper=true,pagecommand={}]{Bai_tap_chuong_3.pdf}
+
+\begin{center}
+{\Large\bfseries Bài tập chương 2}
+\end{center}
+
+\bt{4.4 Năng lượng photon và động năng của electron.}
+
+Một thiết bị quang điện dùng để phát hiện tia cực tím có cực âm cathode được làm bạch kim Pt. Tính khoảng động năng của các electron phát ra bởi tia UV có bước sóng trong khoảng từ 400 nm đến 1 nm, giả sử rằng một photon phát ra một electron.
+
+\bt{4.5 Công và hiệu ứng quang điện.}
+
+Cho công thoát của đồng là 4,46 eV.
+
+(a) Tính tần số photon thấp nhất có thể phát ra một electron từ đồng.
+
+(b) Bước sóng của photon đó và cho biết bức xạ đó xảy ra trong vùng ánh sáng nào?
+
+\bt{4.6 Mật độ electron trong cảm biến quang điện.}
+
+Một cảm biến quang điện có cực âm dạng đĩa có bán kính a = 2 cm được phủ một hợp chất kiềm có công năng $e_0$ = 1,2 eV và hiệu suất lượng tử là 15\%. Cảm biến tiếp xúc với ánh sáng mặt trời. Tính số electron trung bình phát ra trong một giây giả sử mật độ công suất của ánh sáng mặt trời là 1.200 W/m$^2$ và sự phân bố công suất của ánh sáng mặt trời đồng đều trên quang phổ giữa màu đỏ (700 nm) và màu tím (400 nm)
+
+\bt{4.7 Công, động năng và dòng điện trong cảm biến quang điện.}
+
+Một cảm biến quang điện (như hình vẽ) với vật liệu cực âm chưa xác định sẽ được dùng để tiến hành thí nghiệm hiện tượng quang điện như sau: tiến hành đo dòng điện chạy qua mạch trong khi chiếu ánh sáng với các bước sóng khác nhau vào tế bào quang điện. Hiện tượng bức xạ electron được quan sát bắt đầu bằng bức xạ hồng ngoại ở bước sóng 1150 nm. Mật độ công suất của bức xạ tới được giữ không đổi ở mức 50 $\mu$W/cm$^2$.
+
+a) Tính công thoát của catot.
+
+(b) Nếu cảm biến quang điện được chiếu sáng với cùng mật độ năng lượng nhưng với ánh sáng xanh ở bước sóng 480 nm thì động năng của các electron được giải phóng là bao nhiêu?
+
+(c) Giả sử mỗi photon giải phóng một electron. Tính dòng điện trong cảm biến nếu cực âm có diện tích 2,5 cm$^2$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95,>=Stealth]
+  \draw[rounded corners=18pt,thick] (0,0) rectangle (6.2,1.55);
+  \node at (0.2,-0.25) {$C$};
+  \node at (6.0,-0.25) {$A$};
+  \node at (2.9,2.05) {Light};
+  \foreach \x in {1.35,1.75,2.15}{\draw[->] (\x,2.35)--(\x-0.55,1.35);}
+  \foreach \p in {(2.2,1.15),(2.8,0.95),(3.45,1.2),(2.15,0.45),(3.45,0.45)}{
+    \draw \p circle (0.16);\node at \p {$-$};
+  }
+  \draw[->] (2.38,1.15)--(3.0,1.15);
+  \draw[->] (2.98,0.95)--(3.62,0.95);
+  \draw[->] (3.63,1.2)--(4.25,1.2);
+  \draw[->] (2.33,0.45)--(3.0,0.45);
+  \draw[->] (3.63,0.45)--(4.28,0.45);
+  \draw (0,0.75)--(-0.55,0.75)--(-0.55,-1.35)--(1.65,-1.35);
+  \draw (6.2,0.75)--(6.8,0.75)--(6.8,-1.35)--(5.25,-1.35);
+  \draw[->] (6.8,-0.2)--(6.8,0.45); \node[right] at (6.8,0.1) {$I_L$};
+  \draw (1.65,-1.6)--(1.65,-1.1); \draw (1.95,-1.78)--(1.95,-0.92); \node at (1.8,-0.75) {$V$};
+  \draw (1.95,-1.35)--(4.15,-1.35);
+  \draw (4.15,-1.35)--(4.3,-1.1)--(4.55,-1.6)--(4.8,-1.1)--(5.05,-1.6)--(5.25,-1.35);
+  \node[above] at (4.7,-1.18) {$R_L$};
+\end{tikzpicture}
+\end{center}
+
+\bt{4.8 Năng lượng vùng cấm và phản ứng quang phổ.}
+
+Một cảm biến quang bán dẫn dùng để phát hiện ánh sáng hồng ngoại ở bước sóng 1400 nm. Hỏi bề rộng vùng cấm của chất bán dẫn có thể được sử dụng cho mục đích này là bao nhiêu?
+
+\bt{4.9 Cảm biến quang dẫn Germanium silicon và gali arsenide.}
+
+Nồng độ hạt tải và độ linh động của gecmani, silicon và gali arsenua ở 298 K được cho như sau:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{@{}p{5.1cm}ccc@{}}
+\toprule
+& \textbf{Germanium} & \textbf{Silicon} & \textbf{Gallium arsenide}\\
+& \textbf{(Ge)} & \textbf{(Si)} & \textbf{(GaAs)}\\
+\midrule
+Intrinsic concentration, $n_i$ & $2.4\times10^{13}$ & $1.45\times10^{10}$ & $1.79\times10^{6}$\\
+\hspace{0.5cm}[per cm$^3$] & & & \\
+Mobility of electrons, $\mu_e$ & 3,900 & 1,500 & 8,500\\
+\hspace{0.5cm}[cm$^2$/(V$\cdot$s)] & & & \\
+Mobility of holes, $\mu_p$ & 1,900 & 450 & 400\\
+\hspace{0.5cm}[cm$^2$/(V$\cdot$s)] & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+So sánh điện trở tối của một cảm biến giống hệt nhau đối với ba vật liệu được chế tạo dưới dạng thanh hình chữ nhật có chiều dài 2 mm, chiều rộng 0,2 mm và độ dày 0,1 mm để sử dụng làm chất quang dẫn. (Điện trở tính toán ở đây gọi là điện trở danh nghĩa của cảm biến).
+
+\bt{4.10 Cảm biến quang dẫn gali arsenua.}
+
+Cảm biến quang dẫn Gallium arsenide (GaAs ) được chế tạo dưới dạng một con chip nhỏ, hình chữ nhật dài 2,5 mm, rộng 2 mm và dày 0,1 mm. (như hình) Một ánh sáng đỏ có cường độ 10 mW/cm$^2$ và bước sóng 680 nm chiếu vuông góc lên bề mặt trên. Chất bán dẫn là loại n có nồng độ electron là 1,1x10$^{19}$ electron/m$^3$. Độ linh động của electron và lỗ trống trong GaAs lần lượt là 8.500 cm$^2$/(Vs) và 400 cm$^2$/(Vs). Giả sử toàn bộ năng lượng tới trên bề mặt trên của thiết bị được hấp thụ và hiệu suất lượng tử là 0,38. Hãy tính:
+
+\hspace{0.8cm}(a) Điện trở “tối” của cảm biến.
+
+\hspace{0.8cm}(b)Điện trở của cảm biến khi có ánh sáng chiếu vào. Bỏ qua sự tái hợp của electron và lỗ trống.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85,>=Stealth]
+  \coordinate (A) at (0,0); \coordinate (B) at (4.6,0); \coordinate (C) at (5.6,1.0); \coordinate (D) at (1,1.0);
+  \coordinate (At) at (0,1.4); \coordinate (Bt) at (4.6,1.4); \coordinate (Ct) at (5.6,2.4); \coordinate (Dt) at (1,2.4);
+  \fill[gray!30] (At)--(Bt)--(Ct)--(Dt)--cycle;
+  \fill[gray!15] (A)--(B)--(Bt)--(At)--cycle;
+  \fill[gray!10] (B)--(C)--(Ct)--(Bt)--cycle;
+  \draw[thick] (A)--(B)--(C)--(D)--cycle;
+  \draw[thick] (At)--(Bt)--(Ct)--(Dt)--cycle;
+  \draw[thick] (A)--(At) (B)--(Bt) (C)--(Ct) (D)--(Dt);
+  \node at (2.7,0.8) {CdS};
+  \node[rotate=20] at (1.2,1.83) {Aluminum};
+  \node[rotate=20] at (1.22,1.55) {electrode};
+  \node[rotate=20] at (4.83,1.55) {Aluminum};
+  \node[rotate=20] at (4.85,1.28) {electrode};
+  \foreach \x in {2.3,2.8,3.3,3.8}{\draw[->] (\x,3.4)--(\x+0.45,2.2);}
+  \node at (4.15,3.25) {Light};
+  \draw[<->] (0,-0.35)--(4.6,-0.35); \node[below] at (2.3,-0.35) {$L$};
+  \draw[<->] (4.9,-0.1)--(5.75,0.75); \node[right] at (5.35,0.25) {$w$};
+  \draw[<->] (5.95,1.0)--(5.95,2.4); \node[right] at (5.95,1.7) {$d$};
+  \draw (0,0)--(-0.3,-1.1)--(2.2,-1.1);
+  \draw (5.6,1.0)--(6.0,-1.1)--(3.3,-1.1);
+  \draw (2.2,-1.4)--(2.2,-0.8); \draw (2.55,-1.55)--(2.55,-0.65); \node at (2.38,-0.55) {$V$};
+  \draw (2.55,-1.1)--(3.3,-1.1);
+  \node at (3.15,-1.45) {$I$};
+  \node at (2.9,-2.0) {(a)};
+\end{tikzpicture}
+\end{center}
+
+\bt{4.13 Photodiode ở chế độ quang dẫn.}
+
+Một photodiode được phân cực điện áp ngược nhỏ để đảm bảo dòng điện ngược thấp. Dòng rò là 40 nA và cảm biến hoạt động ở 20 $^\circ$C. Tiếp xúc p-n có diện tích 1 mm$^2$ và hoạt động từ nguồn 3V, như trong Hình 4.28. Điện trở là 240$\Omega$. Tính điện áp rơi trên điện trở R trong bóng tối và khi được chiếu sáng bằng chùm tia laser đỏ (800 nm) với mật độ công suất 5 mW/cm$^2$. Giả sử hiệu suất lượng tử là 50\%.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \draw (0,0)--(0,3.4)--(3,3.4);
+  \draw (0,0)--(3,0);
+  \draw (1.6,3.4)--(1.6,2.9);
+  \draw (1.6,2.9)--(1.4,2.65)--(1.8,2.4)--(1.4,2.15)--(1.8,1.9)--(1.6,1.65);
+  \node[right] at (1.8,2.25) {$R$};
+  \draw (1.6,1.65)--(1.6,1.05);
+  \fill (1.6,0.75)--(1.25,0.2)--(1.95,0.2)--cycle;
+  \draw (1.25,0.82)--(1.95,0.82);
+  \draw (1.6,0.82)--(1.6,1.05); \draw (1.6,0.2)--(1.6,0);
+  \draw[->] (0.65,1.05)--(1.22,0.62); \draw[->] (0.7,0.78)--(1.25,0.38);
+  \draw (0,1.25)--(-0.25,1.25); \draw (-0.38,1.08)--(0.13,1.08); \node[left] at (-0.45,1.3) {$V_0$};
+  \fill (3,3.4) circle (0.12); \fill (3,1.45) circle (0.12);
+  \draw (1.6,1.45)--(3,1.45); \node at (2.6,2.0) {$V=?$};
+\end{tikzpicture}
+
+\textit{Figure 4.28\quad A photodiode in photoconductive mode}
+\end{center}
+
+\bt{4.14 Photodiode phân cực thuận.}
+
+Một photodiode được phân cực thuận như trên Hình 4.29 sao cho điện áp trên diode là 0,2 V. Dòng tối qua diode là 10 nA.
+
+(a) Điện áp nguồn $V_0$ phải bằng bao nhiêu để điện áp rơi trên diode là 0,2V ở nhiệt độ 20 $^\circ$C trong bóng tối?
+
+(b) Khi được chiếu sáng với mật độ công suất nhất định và với điện áp $V_0$ tìm được trong câu (a) thì lúc này điện áp rơi trên diode là 0,18 V. Tính tổng công suất được hấp thụ bởi diode ở 800 nm.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9,>=Stealth]
+  \draw (0,0)--(0,3.4)--(1.8,3.4);
+  \draw (0,0)--(2.0,0);
+  \draw (1.8,3.4)--(1.8,2.9);
+  \draw (1.8,2.9)--(1.6,2.65)--(2.0,2.4)--(1.6,2.15)--(2.0,1.9)--(1.8,1.65);
+  \node[right] at (2.05,2.25) {$R=10\;\mathrm{k}\Omega$};
+  \draw (1.8,1.65)--(1.8,1.05);
+  \fill (1.8,0.75)--(1.45,1.3)--(2.15,1.3)--cycle;
+  \draw (1.45,0.68)--(2.15,0.68);
+  \draw (1.8,1.3)--(1.8,1.05); \draw (1.8,0.68)--(1.8,0);
+  \draw[->] (0.75,1.35)--(1.35,0.98); \draw[->] (0.8,1.08)--(1.38,0.77);
+  \draw (0,1.25)--(-0.25,1.25); \draw (-0.38,1.08)--(0.13,1.08); \node[left] at (-0.45,1.3) {$V_0$};
+  \node at (-0.12,1.6) {$+$};
+  \fill (2.55,1.65) circle (0.12); \fill (2.55,0) circle (0.12);
+  \draw (1.8,1.65)--(2.55,1.65); \draw (1.8,0)--(2.55,0);
+\end{tikzpicture}
+
+\textit{Figure 4.29\quad Forward-biased photodiode}
+\end{center}
+
+\clearpage
+\begin{center}
+{\Large\bfseries Bài tập chương 3}
+\end{center}
+
+\bt{3.3 RTD đơn giản.}
+
+Giả sử có một RTD bằng dây đồng được chế tạo bằng cách quấn quanh một lõi gốm cách điện (dây đồng được bọc bởi lớp polyme cách điện). Đường kính của dây là 0,1 mm và điện trở danh nghĩa của RTD là 120 $\Omega$ ở 20 $^\circ$ C. Bỏ qua độ dày của lớp polyme cách điện.
+
+(a) Hỏi dây dài bao nhiêu?
+
+(b) Giả sử chúng ta muốn quấn dây đồng vào một cuộn có đường kính 6 mm với chỉ một lớp dây thì chiều dài tối thiểu của RTD (tương ứng với các dây sát nhau) là bao nhiêu?
+
+(c) Điện trở của RTD thay đổi trong khoảng nào trong dải nhiệt độ từ -45 $^\circ$ C đến 120 $^\circ$ C.
+
+\bt{3.4 Tự đốt nóng của RTD và sai số của cảm biến.}
+
+Một RTD bằng dây bạch kim được bao bọc trong thân gốm được thiết kế để hoạt động trong khoảng từ -200 $^\circ$C đến +600 $^\circ$C. Điện trở danh nghĩa của nó ở 0 $^\circ$C là 100 $\Omega$ và hệ số nhiệt điện trở TCR của nó là 0,00385/$^\circ$C. Cảm biến có sự tự đốt nóng là 0,07 $^\circ$ C/mW. Cảm biến được ghép nối tiếp với một điện trở cố định 100$\Omega$ và được cấp nguồn điện áp không đổi 6V. Tính sai số của RTD do tự đốt nóng trong phạm vi nhiệt độ từ 0 $^\circ$C đến 100 $^\circ$C. Vẽ đồ thị sai số như một hàm của nhiệt độ. Sai số lớn nhất xảy ra ở nhiệt độ nào? Giải thích.
+
+\bt{3.5 Cảm biến nhiệt độ trong bóng đèn.}
+
+Bóng đèn sợi đốt sử dụng dây vonfram làm dây tóc phát sáng bằng cách nung nóng nó đến nhiệt độ đủ sáng để phát ra ánh sáng. Nhiệt độ của dây có thể được ước tính trực tiếp từ định mức công suất và điện trở của dây khi nguội. Cho bóng đèn 120 V, 100 W có điện trở là 22 $\Omega$ở nhiệt độ phòng (20 $^\circ$ C):
+
+(a) Tính nhiệt độ của dây tóc bóng đèn khi bóng đèn sáng.
+
+(b) Những sai số nào có thể có trong việc ước tính nhiệt độ của dây tóc bóng đèn bằng phương pháp này? Giải thích.
+
+\bt{3.6 Độ chính xác điện trở của RTD.}
+
+Biểu thức Callendar–Van Dusen ((3.6) và (3.7)) dưới đây có thể ngoại suy từ các số liệu thực nghiệm khi sử dụng một loại vật liệu mới. Giả sử, người ta quyết định giới thiệu một dòng RTD mới làm bằng nichrome (hợp kim niken–crom) trong phạm vi từ -200 $^\circ$C đến +900 $^\circ$C. Để đánh giá đặc trưng của loại cảm biến mới, người ta phải xác định các hằng số a, b và c trong (3.6) và (3.7).
+
+Đối với T $\geq$0 $^\circ$C : $R(T)=R(0)[1+aT+bT^2]$ (3.6)
+
+Đối với T $<$ 0 $^\circ$C: $R(T)=R(0)[1+aT+bT^2+c(T-100)T^3]$(3.7)
+
+Có các điểm hiệu chuẩn chung đảm bảo nhiệt độ chính xác đã biết mà tại đó điện trở được đo. Các điểm hiệu chuẩn chung là điểm nhiệt độ lỏng của oxy (-182,962 $^\circ$ C), điểm ba của nước (0,01 $^\circ$ C), điểm hơi nước (100 $^\circ$ C), điểm kẽm (419,58 $^\circ$ C) (trạng thái cân bằng rắn-lỏng của kẽm), điểm bạc (961,93 $^\circ$ C) và điểm vàng (1.064,43 $^\circ$ C), cũng như các điểm khác. Bằng cách chọn các điểm nhiệt độ thích hợp và đo điện trở tại các điểm đó, người ta có thể xác định các hệ số a, b, c trong hai phương trình trên. Các phép đo điện trở cho RTD như sau: R = 45,94 $\Omega$ tại điểm oxy, R = 50 $\Omega$ tại 0 $^\circ$ C, R = 51,6 $\Omega$ tại điểm hơi nước, R = 58 $\Omega$ tại điểm kẽm và R = 69,8 $\Omega$ tại điểm bạc. Hệ số nhiệt điện trở TCR của hợp kim nichrome được sử dụng ở đây là 0,0004/ $^\circ$ C ở 20 $^\circ$ C.
+
+(a) Tìm các hệ số của đa thức Calendar–Van Dusen bằng cách sử dụng các điểm oxy, hơi nước và kẽm.
+
+(b) Tìm hệ số của đa thức Calendar–Van Dusen bằng cách sử dụng các điểm oxy, kẽm và bạc. So sánh với (a).
+
+(c) Tìm điện trở ở -150 $^\circ$ C và 800 $^\circ$ C. So sánh kết quả thu được khi sử dụng các hệ số thu được ở (a) và (b) với kết quả thu được khi sử dụng (3.5). Sai số là gì?
+
+\bt{3.9 Sự phụ thuộc của hệ số nhiệt điện trở TCR vào nhiệt độ.}
+
+Hệ số nhiệt độ của điện trở (TCR) không phải là hằng số mà phụ thuộc vào nhiệt độ mà nó được đưa ra hoặc được đánh giá. Tuy nhiên, công thức (3.2) (/trong slide bài giảng/) là đúng ở bất kỳ nhiệt độ nào, bất kể nhiệt độ T$_0$ là bao nhiêu, miễn là $\alpha$ được đo (hoặc đưa ra) tại T$_0$ . Giả sử, $\alpha$ được đo ở 0 $^\circ$ C và bằng $\alpha$ = 0,00385/ $^\circ$ C (đối với platin).
+
+(a) Tính hệ số $\alpha$ ở 50 $^\circ$ C.
+
+(b) Tổng quát hóa kết quả ở câu (a) như sau: cho biết $\alpha_0$ tại T$_0$ , thì $\alpha_1$ tại T$_1$ là bao nhiêu?
+
+\bt{3.10 Cảm biến nhiệt điện trở bán dẫn.}
+
+Một cảm biến nhiệt điện trở bán dẫn được chế tạo từ một thanh bán dẫn hình chữ nhật có tiết diện 2 mm $\times$ 0,1 mm và dài 4 mm. Nồng độ hạt tải thuần ở 20 $^\circ$ C là 1,5 $\times$ 10$^{10}$/cm$^3$ và độ linh động của electron và lỗ trống lần lượt là 1.350 cm$^2$/(V/s) và 450 cm$^2$/(V/s). Hệ số nhiệt điện trở TCR của bán dẫn được sử dụng ở đây là -0,012/ $^\circ$ C và không bị ảnh hưởng bởi việc pha tạp.
+
+(a) Tính điện trở của cảm biến ở 75 $^\circ$ C.
+
+(b) Giả sử vật liệu bán dẫn được pha tạp mạnh với chất pha tạp loại n ở nồng độ 10$^{15}$/cm$^3$ . Tính điện trở của cảm biến ở 75 $^\circ$ C.
+
+(c) Điện trở của cảm biến ở 75 $^\circ$ C là bao nhiêu nếu nó được pha tạp chất loại p ở cùng nồng độ như trong (b)?
+
+\bt{3.11 Cảm biến RTD silic và hàm truyền của nó.}
+
+Một cảm biến điện trở silic có điện trở danh nghĩa là 2000 $\Omega$ ở 25 $^\circ$ C. Để xác định hàm truyền của nó, điện trở của nó được đo ở 0 $^\circ$ C và 90 $^\circ$ C và lần lượt là 1.600 $\Omega$và 3.200 $\Omega$. Giả sử hàm truyền của cảm biến được mô tả bởi phương trình Callendar–Van Dusen bậc hai, hãy tính các hệ số của phương trình và vẽ hàm truyền giữa 0 $^\circ$ C và 100 $^\circ$ C.
+
+\bt{3.12 Cảm biến RTD silic.}
+
+Cảm biến RTD silic pha tạp loại n được chế tạo dưới dạng màng mỏng rộng 2 mm, dày 0,1 mm và dài 10 mm. Độ linh động của các hạt tải giảm theo nhiệt độ trong khi mật độ hạt tải được cho là không đổi trong phạm vi quan tâm. Nồng độ electron của silic pha tạp loại n được sử dụng cho cảm biến là 10$^{17}$/cm$^3$ trong khi nồng độ hạt tải thuần trong silic là 1,45 $\times$ 10$^{10}$/cm$^3$ . Độ linh động của electron và lỗ trống được đo ở 25 $^\circ$ C, 100 $^\circ$ C và 150 $^\circ$ C như sau:
+
+\begin{center}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Temperature & 25 $^\circ$C & 100 $^\circ$C & 150 $^\circ$C\\
+Mobility of electrons [cm$^2$/(V.s)] & 1,370 & 780 & 570\\
+Mobility of holes [cm$^2$/(V.s)] & 480 & 262 & 186\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+(a) Tìm hàm truyền của cảm biến dưới dạng đa thức bậc hai (điện trở theo nhiệt độ).
+
+(b) Tính toán và vẽ đồ thị độ nhạy của cảm biến.
+
+(c) Điện trở và độ nhạy ở ba nhiệt độ là bao nhiêu?
+
+\bt{3.13 Hàm truyền thermistor.}
+
+Hàm truyền của NTC thermistor được ước tính tốt nhất bằng cách sử dụng mô hình Steinhart–Hart trong (3.15).
+
+\[
+T=\frac{1}{a+b\ln(R)+c\ln^3(R)}
+\]
+
+Để đánh giá các hằng số, điện trở của thermistor được đo ở ba nhiệt độ với các kết quả sau: R = 1,625 k $\Omega$ ở 0 $^\circ$ C, R = 938 $\Omega$ ở 25 $^\circ$ C và R = 154 $\Omega$ ở 80 $^\circ$ C.
+
+(a) Tìm hàm truyền nhiệt điện trở bằng mô hình Steinhart–Hart.
+
+(b) Sử dụng điện trở ở 25 $^\circ$ C làm nhiệt độ tham chiếu, tìm hàm truyền bằng cách sử dụng phương trình mô hình đơn giản hóa $R(T)=R_0exp\left\{\beta\left(\frac{1}{T}-\frac{1}{T_0}\right)\right\}$
+
+(c) Vẽ hai hàm truyền trong phạm vi 0–100 $^\circ$ C và so sánh về sự khác biệt giữa chúng.
+
+\bt{3.14 Hàm truyền thermistor.}
+
+Một loại thermistor mới có điện trở đo được là 100 k$\Omega$ ở 20 $^\circ$C được sử dụng để cảm biến nhiệt độ trong khoảng từ - 80 $^\circ$C đến +100 $^\circ$ C. Giả sử hàm truyền của thermistor này là một đa thức bậc hai. Để đánh giá hàm truyền của nó, điện trở của thermistor được đo ở -60 $^\circ$ C là 320 k$\Omega$ và ở +80 $^\circ$ C là 20 k$\Omega$.
+
+(a) Tìm và vẽ đồ thị hàm truyền trong phạm vi hoạt động của thermistor.
+
+(b) Tính điện trở ở 0 $^\circ$ C.
+
+\bt{3.15 Hàm truyền dạng đơn giản của thermistor.}
+
+Giả sử cần xác định hàm truyền của một thermistor trong phạm vi làm việc 0 -120 $^\circ$C. Cho biết điện trở của thermistor là 10 k$\Omega$ ở 20 $^\circ$ C. Điện trở của thermistor đo được ở các nhiệt độ 0 $^\circ$ C, 60 $^\circ$ C và 120 $^\circ$ C, lần lượt cho kết quả là 24 k$\Omega$, 2,2 k$\Omega$ và 420 $\Omega$. Hàm truyền của thermistor được cho dưới dạng.
+
+\[
+R(T)=R_0exp\left\{\beta\left(\frac{1}{T}-\frac{1}{T_0}\right)\right\}
+\]
+
+Tuy nhiên, vì mô hình chỉ có một biến $\beta$ nên ta có thể chọn bất kỳ nhiệt độ nào trong ba nhiệt độ để suy ra hàm truyền.
+
+(a) Suy ra hàm truyền bằng cách sử dụng lần lượt ba phép đo. So sánh các giá trị $\beta$ thu được.
+
+(b) Tính toán sai số tại ba điểm cho ba hàm truyền.
+
+(c) Vẽ ba hàm truyền và so sánh chúng. Thảo luận về sự khác nhau và lựa chọn nhiệt độ “thích hợp” trong việc suy ra phương trình trên.
+
+\bt{3.16 Tự tỏa nhiệt của thermistor.}
+
+Một thermistor có điện trở danh nghĩa là 15 k$\Omega$ ở 25 $^\circ$ C khi mang dòng điện 5 mA. Ở nhiệt độ môi trường là 30 $^\circ$ C (đo bằng cặp nhiệt điện), điện trở của thermistor là 12,5 k $\Omega$. Khi không có dòng điện chạy qua thermistor thì điện trở của nó giảm xuống còn 12,35 k $\Omega$. Tính toán sai số do tự tỏa nhiệt của thermistor trở theo $^\circ$ C trên miliwatt ( $^\circ$C/mW).
+
 \end{document}
