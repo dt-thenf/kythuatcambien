@@ -1,0 +1,36 @@
+name: Build merged exercises PDF
+
+on:
+  push:
+    paths:
+      - "bai_tap_chuong_2_va_3.tex"
+      - ".github/workflows/build-pdf.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: bai_tap_chuong_2_va_3.tex
+
+      - name: Commit generated PDF
+        shell: bash
+        run: |
+          git config user.name "dt-thenf"
+          git config user.email "81815344+dt-thenf@users.noreply.github.com"
+          git add bai_tap_chuong_2_va_3.pdf
+          if git diff --cached --quiet; then
+            echo "PDF is already up to date."
+            exit 0
+          fi
+          git commit -m "Build merged chapter 2 and 3 exercises PDF"
+          git push
